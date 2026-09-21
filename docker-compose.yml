@@ -1,0 +1,13 @@
+services:
+  web:
+    image: alphabloo7/s2-pend-seni:latest
+    container_name: s2-pend-seni-web
+    restart: always
+    ports:
+      - "8088:80" # Ubah port 8088 jika port tersebut sudah terpakai di server VPS Anda
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
