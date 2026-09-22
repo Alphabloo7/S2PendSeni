@@ -65,11 +65,15 @@
       border-bottom:1px solid rgba(255,255,255,.22);
     }
     .header-main{height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-    .brand{display:flex;align-items:center;gap:14px;min-width:0}
-    .logo-box{width:54px;height:54px;padding:7px;border-radius:50%;background:#fff;object-fit:contain;flex:0 0 auto;display:block;box-shadow:0 2px 8px rgba(0,40,90,.22)}
+    .brand{display:flex;align-items:center;gap:16px;min-width:0;text-decoration:none;color:inherit}
+    .brand-logos{display:flex;align-items:center;gap:14px;flex:0 0 auto}
+    .brand-logo{height:44px;width:auto;object-fit:contain;display:block}
+    .brand-logo.logo-uns{height:46px}
+    .brand-logo.logo-dikti{height:40px}
+    .brand-divider{width:1px;height:34px;background:rgba(255,255,255,.3);flex:0 0 auto}
     .brand-copy{min-width:0}
-    .brand-copy strong{display:block;font-size:16px;line-height:1.15;letter-spacing:.01em}
-    .brand-copy span{display:block;font-size:11px;opacity:.9;margin-top:4px}
+    .brand-copy strong{display:block;font-size:15px;line-height:1.15;letter-spacing:.01em}
+    .brand-copy span{display:block;font-size:11px;opacity:.9;margin-top:3px}
     .header-links{display:flex;gap:24px;align-items:center;font-size:12px;font-weight:700}
     .header-links a{opacity:.97}.header-links a:hover{opacity:.78}
     .header-search{
@@ -264,7 +268,10 @@
     .footer-portals{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;padding-bottom:30px;border-bottom:1px solid #343434}
     .portal{font-size:20px;font-weight:950;color:#F5F5F5;letter-spacing:-.02em}.portal small{display:block;font-size:8px;color:#AFAFAF;margin-top:3px;letter-spacing:.04em}
     .foot-grid{display:grid;grid-template-columns:1.35fr .7fr .7fr;gap:52px;padding:34px 0 22px}
-    .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:13px}.foot-mark{width:50px;height:50px;padding:6px;border-radius:50%;background:#fff;object-fit:contain;display:block}.foot-brand strong{font-size:19px;line-height:1.05}.foot-text{font-size:10px;color:#C5C5C5;max-width:440px}.foot-title{font-size:12px;font-weight:900;margin-bottom:9px}.foot-links{display:grid;gap:6px;font-size:10px;color:#D0D0D0}.foot-links a:hover{color:var(--uns-yellow)}
+    .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:13px}
+    .foot-brand .foot-logos{display:flex;align-items:center;gap:10px}
+    .foot-brand .foot-logo{height:60px;width:auto;object-fit:contain;display:block}
+    .foot-brand strong{font-size:19px;line-height:1.05}.foot-text{font-size:10px;color:#C5C5C5;max-width:440px}.foot-title{font-size:12px;font-weight:900;margin-bottom:9px}.foot-links{display:grid;gap:6px;font-size:10px;color:#D0D0D0}.foot-links a:hover{color:var(--uns-yellow)}
     .copyright{text-align:center;border-top:1px solid #343434;padding-top:16px;font-size:9px;color:#BEBEBE}
 
     .mobile-cta{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:100;background:var(--uns-yellow);color:#17364B;border-radius:6px;padding:12px 16px;text-align:center;font-weight:950;box-shadow:0 13px 35px rgba(0,0,0,.24)}
@@ -281,7 +288,7 @@
     }
     @media(max-width:720px){
       .container{width:min(calc(100% - 24px),var(--max))}.utility-right{display:none}.utility-left{gap:12px}
-      .header-main{height:68px}.header-search{display:none}.brand-copy strong{font-size:13px}.brand-copy span{font-size:9px}.logo-box{width:46px;height:46px;padding:6px}
+      .header-main{height:68px}.header-search{display:none}.brand-copy strong{font-size:13px}.brand-copy span{font-size:9px}.brand-logo{height:34px}.brand-logo.logo-uns{height:36px}.brand-logo.logo-dikti{height:30px}.brand-divider{height:24px}
       .program-nav .container{height:auto;min-height:56px;padding:12px 0}.program-menu{display:none}.program-name{font-size:11px}.nav-cta{font-size:10px}
       .hero-inner{padding:48px 0 56px}.hero h1{font-size:42px}.hero p{font-size:15px}.hero-actions{display:grid}.btn{width:100%}
       .accredit-row{grid-template-columns:1fr;gap:3px}.accredit-history,.accredit-period{grid-template-columns:1fr}
@@ -325,9 +332,13 @@
   <header class="site-header">
     <div class="container header-main">
       <a class="brand" href="#top" aria-label="Pascasarjana FKIP UNS">
-        <img class="logo-box" src="assets/logo-uns.png" alt="Logo Universitas Sebelas Maret" />
+        <div class="brand-logos">
+          <img class="brand-logo logo-uns" src="assets/logo-uns.png" alt="Logo Universitas Sebelas Maret" />
+          <img class="brand-logo logo-dikti" src="assets/logo_diktisaintek.png" alt="Logo Diktisaintek Berdampak" />
+        </div>
+        <div class="brand-divider"></div>
         <div class="brand-copy">
-          <strong>PASCASARJANA FKIP UNS</strong>
+          <strong>PASCASARJANA FKIP</strong>
           <span>Universitas Sebelas Maret · Surakarta</span>
         </div>
       </a>
@@ -344,7 +355,7 @@
           <div class="breadcrumbs">FKIP UNS / Pascasarjana / Magister / Pendidikan Seni</div>
           <div class="hero-kicker">Program Magister</div>
           <h1 id="hero-title">S2 Pendidikan <span>Seni</span></h1>
-          <p>Kembangkan kompetensi sebagai pendidik, peneliti, dan praktisi seni melalui strategi pembelajaran, inovasi teknologi pendidikan, pengembangan seni, dan eksplorasi medium.</p>
+          <p>Kembangkan kompetensi sebagai pendidik ahli, peneliti, dan pengembang pendidikan seni melalui pembelajaran berbasis riset, kreativitas, dan perkembangan seni dan budaya.</p>
           <div class="hero-actions">
             <a class="btn btn-yellow" href="https://spmb.uns.ac.id/pendaftar/dashboard/index" target="_blank" rel="noopener">DAFTAR SEKARANG →</a>
             <a class="btn btn-outline" href="#jalur">LIHAT JALUR MASUK</a>
@@ -354,14 +365,14 @@
         <aside class="hero-card" aria-label="Ringkasan S2 Pendidikan Seni">
           <div class="hero-card-label">Pascasarjana FKIP</div>
           <h3>Pendidikan Seni</h3>
-          <p>Program magister untuk mengembangkan pendidik, peneliti, dan praktisi seni yang adaptif, kreatif, dan inovatif.</p>
+          <p>Program magister berorientasi pada pembelajaran seni, pengembangan profesional, riset, inovasi pembelajaran, dan publikasi ilmiah di bidang seni.</p>
           <div class="hero-mini-grid">
             <div class="hero-mini"><strong>Unggul</strong><span>Akreditasi Program Studi</span></div>
             <div class="hero-mini"><strong>M.Pd.</strong><span>Gelar lulusan</span></div>
-            <div class="hero-mini"><strong>3 Bulan</strong><span>Rata-rata masa tunggu kerja alumni</span></div>
+            <div class="hero-mini"><strong>1 Bulan</strong><span>Rata-rata masa tunggu kerja alumni</span></div>
             <div class="hero-mini"><strong>4 smt</strong><span>Rancangan masa studi</span></div>
           </div>
-          <div class="accred">★ Akreditasi Program Studi: Unggul</div>
+          <div class="accred">★ Terakreditasi Unggul LAMDIK · berlaku 22 Juli 2025–21 Juli 2030</div>
         </aside>
       </div>
     </section>
@@ -372,7 +383,7 @@
           <div class="highlight"><strong>Unggul</strong><span>Akreditasi LAMDIK</span></div>
           <div class="highlight"><strong>M.Pd.</strong><span>Gelar yang didapatkan</span></div>
           <div class="highlight"><strong>2 Tahun</strong><span>Panjang studi program</span></div>
-          <div class="highlight"><strong>3 Bulan</strong><span>Rata-rata masa tunggu kerja alumni</span></div>
+          <div class="highlight"><strong>1 Bulan</strong><span>Rata-rata masa tunggu kerja alumni</span></div>
         </div>
       </div>
     </section>
@@ -382,53 +393,50 @@
       <div class="container">
         <div class="section-title"><h2>Profil Utama Program Studi</h2><div class="title-line"></div><p>Informasi inti S2 Pendidikan Seni sebagaimana ditampilkan pada materi profil program studi.</p></div>
         <div class="poster-grid">
-          <article class="poster-card"><h3>Core Study</h3><p><strong>Strategi Pembelajaran Seni, Inovasi Teknologi Pendidikan Seni, Manajemen Integrasi Seni</strong>, dan eksplorasi medium seni.</p></article>
-          <article class="poster-card"><h3>Kompetensi</h3><p>Kepribadian dan etika profesional, penguasaan ilmu dan inovasi pendidikan seni, penelitian dan pengembangan seni, serta manajemen dan teknologi seni.</p></article>
-          <article class="poster-card"><h3>Peluang Karir</h3><p>Lulusan berkarier sebagai <strong>pendidik seni, kurator seni, manajer pendidikan seni, peneliti seni, atau praktisi seni</strong>.</p></article>
-          <article class="poster-card"><h3>Fasilitas</h3><p><strong>Ruang kuliah, laboratorium microteaching, perpustakaan dan e-library, galeri, studio inkubasi seni, serta pusat multimedia</strong>.</p></article>
+          <article class="poster-card"><h3>Core Study</h3><p><strong>Mata kuliah pembangunan kompetensi profesional</strong> sebagai fondasi pengembangan keilmuan dan profesi mahasiswa.</p></article>
+          <article class="poster-card"><h3>Kompetensi</h3><p>Penguatan kompetensi pada bidang <strong>Pendidikan</strong> melalui pembelajaran, riset, dan pengembangan akademik.</p></article>
+          <article class="poster-card"><h3>Peluang Karir</h3><p>Lulusan dipersiapkan menjadi <strong>Pendidik Ahli</strong> serta profesional yang relevan dengan bidang pendidikan seni.</p></article>
+          <article class="poster-card"><h3>Fasilitas</h3><p>Proses pembelajaran didukung <strong>sarana dan prasarana yang memadai</strong> untuk kegiatan akademik seni.</p></article>
         </div>
       </div>
     </section>
 
     <section class="cooperation" id="mitra">
-      <div class="container"><div class="cooperation-box"><div><h3>Mitra Kerjasama</h3><p>Universiti Teknologi MARA Melaka, Universiti Malaysia Sabah, Chiang Rai Rajabhat University, Institut Seni dan Budaya Indonesia, dan mitra lainnya.</p></div><div class="cooperation-badge">Nasional & Internasional</div></div></div>
+      <div class="container"><div class="cooperation-box"><div><h3>Mitra Kerjasama</h3><p>Kerjasama nasional dan internasional dalam payung MOU Universitas dan Fakultas.</p></div><div class="cooperation-badge">Nasional & Internasional</div></div></div>
     </section>
 
     <section id="akreditasi" class="accreditation">
       <div class="container">
         <div class="section-title">
-          <h2>Sertifikat Akreditasi</h2>
+          <h2>Akreditasi Program Studi</h2>
           <div class="title-line"></div>
-          <p>Lembaga Akreditasi Mandiri Kependidikan berdasarkan Keputusan LAMDIK No. 567/SK/LAMDIK/Ak/M/V/2024, menetapkan bahwa Program Studi Pendidikan Seni pada Program Magister Universitas Sebelas Maret, Kota Surakarta memperoleh peringkat <strong>Unggul dengan nilai 364</strong>.</p>
+          <p>S2 Pendidikan Seni FKIP UNS berstatus <strong>Unggul</strong>. Informasi akreditasi ditampilkan sebagai bagian utama landing page agar calon mahasiswa dapat memverifikasi mutu program sebelum mendaftar.</p>
         </div>
         <div class="accredit-grid">
           <article class="accredit-main" aria-label="Status akreditasi saat ini">
             <div class="accredit-eyebrow">Status Akreditasi Saat Ini</div>
-            <div class="accredit-grade">Unggul</div>
-            <div class="accredit-score">Akreditasi Program Studi</div>
-            <h3>Program Magister Pendidikan Seni</h3>
-            <p>Universitas Sebelas Maret · Kota Surakarta</p>
+            <div class="accredit-grade">UNGGUL</div>
+            <div class="accredit-score">LAMDIK · Nilai 366</div>
+            <h3>S2 Pendidikan Seni</h3>
+            <p>Fakultas Keguruan dan Ilmu Pendidikan · Universitas Sebelas Maret</p>
             <div class="accredit-period">
-              <div><small>Keputusan</small><strong>LAMDIK</strong></div>
-              <div><small>Nilai</small><strong>364</strong></div>
+              <div><small>Berlaku mulai</small><strong>22 Juli 2025</strong></div>
+              <div><small>Berlaku sampai</small><strong>21 Juli 2030</strong></div>
             </div>
           </article>
 
           <article class="accredit-detail">
             <h3>Detail Sertifikat Akreditasi</h3>
-            <p>Informasi lengkap sesuai dokumen sertifikat akreditasi yang berlaku untuk program studi.</p>
+            <p>Ringkasan status terbaru program studi dan riwayat akreditasi sebelumnya.</p>
             <div class="accredit-data">
-              <div class="accredit-row"><span>Program</span><strong>Program Studi Pendidikan Seni, Program Magister</strong></div>
-              <div class="accredit-row"><span>Institusi</span><strong>Universitas Sebelas Maret</strong></div>
-              <div class="accredit-row"><span>Kota</span><strong>Surakarta</strong></div>
-              <div class="accredit-row"><span>Peringkat</span><strong>Unggul dengan nilai 364</strong></div>
-              <div class="accredit-row"><span>Berlaku</span><strong>6 Maret 2024 - 5 Maret 2029</strong></div>
-              <div class="accredit-row"><span>Keputusan</span><strong>LAMDIK No. 567/SK/LAMDIK/Ak/M/V/2024</strong></div>
-              <div class="accredit-row"><span>Ditetapkan</span><strong>Jakarta, 17 Mei 2024</strong></div>
+              <div class="accredit-row"><span>Lembaga Akreditasi</span><strong>Lembaga Akreditasi Mandiri Kependidikan (LAMDIK)</strong></div>
+              <div class="accredit-row"><span>Nomor SK</span><strong>1152/SK/LAMDIK/Ak/M/VII/2025</strong></div>
+              <div class="accredit-row"><span>Peringkat / Nilai</span><strong>UNGGUL · 366</strong></div>
+              <div class="accredit-row"><span>Periode</span><strong>22 Juli 2025 – 21 Juli 2030</strong></div>
             </div>
             <div class="accredit-history" aria-label="Riwayat akreditasi">
-              <div class="history-item"><strong>Unggul · 364</strong><span>Peringkat sesuai keputusan LAMDIK</span></div>
-              <div class="history-item"><strong>2024-2029</strong><span>Periode berlaku sertifikat</span></div>
+              <div class="history-item"><strong>A · 364</strong><span>BAN-PT · 23 September 2020 – 22 September 2025</span></div>
+              <div class="history-item"><strong>B</strong><span>BAN-PT · 14 Maret 2014 – 14 Maret 2019</span></div>
             </div>
             <div class="accredit-actions">
               <a class="btn btn-blue" href="https://akademik.fkip.uns.ac.id/s2-pendidikan-seni/" target="_blank" rel="noopener">AKREDITASI FKIP UNS ↗</a>
@@ -444,7 +452,7 @@
         <div class="section-title">
           <h2>S2 Pendidikan Seni FKIP UNS</h2>
           <div class="title-line"></div>
-          <p>Mengembangkan pendidikan seni yang relevan dengan masa depan melalui pembelajaran inovatif, riset, kreativitas, dan jejaring akademik.</p>
+          <p>Mengembangkan pendidikan seni yang relevan dengan masa depan melalui pembelajaran berbasis capaian, riset, kreativitas, publikasi, dan jejaring akademik.</p>
         </div>
         <div class="feature-grid">
           <article class="feature">
@@ -455,7 +463,7 @@
           <article class="feature">
             <div class="feature-icon">02</div>
             <h3>Riset & Publikasi</h3>
-            <p>Pembelajaran dapat berbasis riset, proyek, atau kombinasi keduanya, dengan luaran ilmiah yang relevan.</p>
+            <p>Pembelajaran dapat berbasis riset, kreativitas, dan proyek seni, dengan luaran ilmiah yang relevan.</p>
           </article>
           <article class="feature">
             <div class="feature-icon">03</div>
@@ -471,7 +479,7 @@
         <div class="section-title">
           <h2>Jalur Masuk</h2>
           <div class="title-line"></div>
-          <p>Landing page ini menonjolkan dua jalur masuk S2 Pendidikan Seni: Reguler dan By Research. Ketersediaan jalur pada setiap gelombang tetap mengikuti portal resmi SPMB UNS.</p>
+          <p>Landing page ini menonjolkan dua pola studi untuk S2 Pendidikan Seni: Reguler dan Magister Jalur Penelitian (By Research). Ketersediaan jalur pada setiap gelombang tetap mengikuti portal resmi SPMB UNS.</p>
         </div>
         <div class="path-grid">
           <div class="tab-list" role="tablist" aria-label="Pilihan jalur masuk">
@@ -505,7 +513,7 @@
               <div style="height:14px"></div>
               <div class="source-links">
                 <a class="btn btn-blue" href="https://spmb.uns.ac.id/jalur-masuk/jenjang?jenjang=s2-s3" target="_blank" rel="noopener">CEK JALUR S2/S3 ↗</a>
-                <a class="mini-link" href="https://expert.uns.ac.id/researchers?fakultas%5B%5D=0106" target="_blank" rel="noopener">Cari calon pembimbing di Expert UNS ↗</a>
+                <a class="mini-link" href="https://expert.uns.ac.id/" target="_blank" rel="noopener">Cari calon pembimbing di Expert UNS ↗</a>
               </div>
             </article>
           </div>
@@ -557,7 +565,7 @@
         </div>
 
         <div class="official-note">
-          <strong>Catatan:</strong> SPMB Pascasarjana UNS dapat membuka skema lain seperti Beasiswa, Kerja Sama, atau RPL pada periode tertentu. Halaman promosi S2 Pendidikan Seni ini memprioritaskan <strong>Reguler</strong> dan <strong>By Research</strong>. Jadwal serta persyaratan yang bersifat dinamis tidak di-hard-code agar halaman tidak cepat kedaluwarsa.
+          <strong>Catatan:</strong> SPMB Pascasarjana UNS dapat membuka skema lain seperti Beasiswa, Kerja Sama, atau RPL pada periode tertentu. Halaman promosi S2 Pendidikan Seni ini sengaja memprioritaskan <strong>Reguler</strong> dan <strong>Magister Jalur Penelitian</strong>. Jadwal serta persyaratan yang bersifat dinamis tidak di-hard-code agar halaman tidak cepat kedaluwarsa.
           <div class="source-links">
             <a class="mini-link" href="https://spmb.uns.ac.id/jalur-masuk/jenjang?jenjang=s2-s3" target="_blank" rel="noopener">Informasi Jalur S2/S3 ↗</a>
             <a class="mini-link" href="https://spmb.uns.ac.id/pendaftar/dashboard/index" target="_blank" rel="noopener">Dashboard Pendaftaran ↗</a>
@@ -572,17 +580,17 @@
         <div class="section-title">
           <h2>Kurikulum</h2>
           <div class="title-line"></div>
-          <p>Kurikulum dirancang untuk mengakomodasi penguatan keilmuan seni, pembelajaran, penelitian, dan luaran akademik pada jenjang Magister.</p>
+          <p>Kurikulum dirancang untuk mengakomodasi penguatan keilmuan, pembelajaran, penelitian, dan luaran akademik pada jenjang Magister.</p>
         </div>
         <div class="curriculum-grid">
           <article class="curriculum-card">
             <h3>Struktur Pembelajaran</h3>
             <p>Ringkasan untuk kebutuhan landing page promosi. Detail mata kuliah dan distribusi semester tetap mengacu pada dokumen kurikulum resmi program studi.</p>
             <div class="curr-list">
-              <div class="curr-row"><div class="num">01</div><div><strong>Strategi Pembelajaran Seni</strong><span>Penguatan strategi, metode, dan pendekatan pembelajaran seni.</span></div></div>
-              <div class="curr-row"><div class="num">02</div><div><strong>Teknologi Pendidikan Seni</strong><span>Inovasi teknologi dan pengembangan media pendidikan seni.</span></div></div>
-              <div class="curr-row"><div class="num">03</div><div><strong>Manajemen Integrasi Seni</strong><span>Pengelolaan dan integrasi seni dalam konteks pendidikan dan budaya.</span></div></div>
-              <div class="curr-row"><div class="num">04</div><div><strong>Eksplorasi Medium Seni</strong><span>Eksplorasi medium, penelitian, dan pengembangan karya seni.</span></div></div>
+              <div class="curr-row"><div class="num">01</div><div><strong>Mata kuliah wajib</strong><span>Fondasi keilmuan, metodologi, dan kompetensi utama pendidikan seni.</span></div></div>
+              <div class="curr-row"><div class="num">02</div><div><strong>Mata kuliah pilihan</strong><span>Penguatan bidang kajian sesuai minat akademik dan arah penelitian seni.</span></div></div>
+              <div class="curr-row"><div class="num">03</div><div><strong>Riset & proyek</strong><span>Pembelajaran berbasis riset, proyek karya seni, atau kombinasi keduanya.</span></div></div>
+              <div class="curr-row"><div class="num">04</div><div><strong>Tugas akhir</strong><span>Tesis, publikasi ilmiah, prototipe, atau karya relevan sesuai ketentuan akademik.</span></div></div>
             </div>
           </article>
           <article class="curriculum-card blue">
@@ -591,8 +599,8 @@
             <div class="curr-list" style="margin-top:25px">
               <div class="curr-row"><div class="num">A</div><div><strong>KKNI Level 8</strong><span>Capaian pembelajaran jenjang Magister.</span></div></div>
               <div class="curr-row"><div class="num">B</div><div><strong>Berbasis OBE</strong><span>Berorientasi pada ketercapaian kompetensi lulusan.</span></div></div>
-              <div class="curr-row"><div class="num">C</div><div><strong>Masa studi</strong><span>Dirancang selesai dalam 2 tahun atau 4 semester.</span></div></div>
-              <div class="curr-row"><div class="num">D</div><div><strong>Fleksibel</strong><span>Pembelajaran dapat dilakukan secara daring hingga 87,5%.</span></div></div>
+              <div class="curr-row"><div class="num">C</div><div><strong>Masa studi</strong><span>Dirancang selesai dalam 4 semester pada skema umum Pascasarjana UNS.</span></div></div>
+              <div class="curr-row"><div class="num">D</div><div><strong>Adaptif</strong><span>Pengembangan kurikulum mengikuti kebutuhan akademik dan profesi.</span></div></div>
             </div>
           </article>
         </div>
@@ -607,7 +615,7 @@
           <p>Pola tampilan bagian ini dibuat mendekati karakter portal Expert UNS: identitas akademisi, bidang keahlian, dan akses cepat ke portal kepakaran.</p>
         </div>
 
-        <a class="expert-banner" href="https://expert.uns.ac.id/researchers?fakultas%5B%5D=0106" target="_blank" rel="noopener">
+        <a class="expert-banner" href="https://expert.uns.ac.id/" target="_blank" rel="noopener">
           <div class="expert-brand">
             <div class="expert-mark">E</div>
             <div class="expert-copy"><strong>Expert UNS</strong><span>Temukan pakar, bidang keahlian, publikasi, dan rekam jejak penelitian Universitas Sebelas Maret.</span></div>
@@ -616,43 +624,40 @@
         </a>
 
         <div class="faculty-stats" aria-label="Komposisi pengajar sesuai profil program studi">
-          <div class="faculty-stat"><strong>10</strong><span>Pengajar pada profil</span></div>
-          <div class="faculty-stat"><strong>87,5%</strong><span>Boleh daring</span></div>
-          <div class="faculty-stat"><strong>2 Tahun</strong><span>Panjang studi</span></div>
-          <div class="faculty-stat"><strong>M.Pd.</strong><span>Gelar lulusan</span></div>
+          <div class="faculty-stat"><strong>15</strong><span>Total Dosen</span></div>
+          <div class="faculty-stat"><strong>8</strong><span>Guru Besar</span></div>
+          <div class="faculty-stat"><strong>4</strong><span>Lektor Kepala</span></div>
+          <div class="faculty-stat"><strong>3</strong><span>Lektor</span></div>
         </div>
-        <div class="official-note" style="margin:0 0 20px"><strong>Pengajar & Keahlian:</strong> daftar pengajar berikut diambil dari materi profil Pendidikan Seni dan menampilkan bidang keahlian yang relevan.</div>
+        <div class="official-note" style="margin:0 0 20px"><strong>Pengajar & Keahlian:</strong> relevan dengan bidang keahlian. Materi profil menyebut 15 dosen dengan komposisi 8 Guru Besar, 4 Lektor Kepala, dan 3 Lektor. Daftar di bawah mempertahankan nama dosen yang sudah tersedia pada halaman ini.</div>
         <div class="faculty-grid">
-          <article class="person"><div class="person-head"><div class="avatar">AW</div><div><h3>Dr. Adam Wahida, S.Pd., M.Sn.</h3><p>Pendidikan Seni</p></div></div><span class="expert-chip">Pendidikan Seni</span></article>
-          <article class="person"><div class="person-head"><div class="avatar">BS</div><div><h3>Dr. Basuki Sumartono, M.Sn.</h3><p>Seni dan Pendidikan Seni</p></div></div><span class="expert-chip">Seni</span></article>
-          <article class="person"><div class="person-head"><div class="avatar">SS</div><div><h3>Prof. Dr. Slamet Subiyantoro, M.Si.</h3><p>Pendidikan Seni</p></div></div><span class="expert-chip">Pendidikan Seni</span></article>
-          <article class="person"><div class="person-head"><div class="avatar">MA</div><div><h3>Dr. Margana, M.Sn.</h3><p>Seni Rupa</p></div></div><span class="expert-chip">Seni Rupa</span></article>
-          <article class="person"><div class="person-head"><div class="avatar">MU</div><div><h3>Prof. Dr. Mulyanto, M.Pd.</h3><p>Pendidikan Seni</p></div></div><span class="expert-chip">Pendidikan Seni</span></article>
-          <article class="person"><div class="person-head"><div class="avatar">EK</div><div><h3>Dr. Edi Kurniedi, M.Pd.</h3><p>Pendidikan Seni</p></div></div><span class="expert-chip">Pendidikan Seni</span></article>
-          <article class="person"><div class="person-head"><div class="avatar">SS</div><div><h3>Prof. Dr. Slamet Supriyadi, M.Pd.</h3><p>Pendidikan Seni</p></div></div><span class="expert-chip">Pendidikan Seni</span></article>
-          <article class="person"><div class="person-head"><div class="avatar">SO</div><div><h3>Prof. Dr. Soetarno, DEA</h3><p>Seni Pertunjukan</p></div></div><span class="expert-chip">Seni Pertunjukan</span></article>
-          <article class="person"><div class="person-head"><div class="avatar">ES</div><div><h3>Dr. Edy Tri Sulistyo, M.Pd.</h3><p>Pendidikan Seni</p></div></div><span class="expert-chip">Pendidikan Seni</span></article>
-          <article class="person"><div class="person-head"><div class="avatar">SN</div><div><h3>Dr. Sugeng Nugroho, M.Hum.</h3><p>Seni dan Budaya</p></div></div><span class="expert-chip">Seni dan Budaya</span></article>
-          <article class="person"><div class="person-head"><div class="avatar">NY</div><div><h3>Dr. Nanang Yulianto, M.Ds.</h3><p>Desain dan Seni</p></div></div><span class="expert-chip">Desain</span></article>
+          <article class="person"><div class="person-head"><div class="avatar">PK</div><div><h3>Dr. Puguh Karyanto, S.Si., M.Si., Ph.D.</h3><p>Ketua Program Studi · Seni & Budaya</p></div></div><span class="expert-chip">Pendidikan Seni</span><span class="expert-chip">Seni Rupa</span></article>
+          <article class="person"><div class="person-head"><div class="avatar">SK</div><div><h3>Prof. Sukarmin, S.Pd., M.Si., Ph.D.</h3><p>Pendidikan Seni · Seni dan pembelajaran</p></div></div><span class="expert-chip">Pembelajaran Seni</span></article>
+          <article class="person"><div class="person-head"><div class="avatar">SJ</div><div><h3>Prof. Dr. rer.nat. Sajidan, M.Si.</h3><p>Pendidikan Seni · Seni dan budaya</p></div></div><span class="expert-chip">Pendidikan Seni</span></article>
+          <article class="person"><div class="person-head"><div class="avatar">SW</div><div><h3>Prof. Dr. Sarwanto, S.Pd., M.Si.</h3><p>Pendidikan Seni · Musik dan tari</p></div></div><span class="expert-chip">Seni Musik</span><span class="expert-chip">Tari</span></article>
+          <article class="person"><div class="person-head"><div class="avatar">SS</div><div><h3>Prof. Sulistyo Saputro, M.Si., Ph.D.</h3><p>Seni/Kriya · Desain dan budaya</p></div></div><span class="expert-chip">Kriya</span></article>
+          <article class="person"><div class="person-head"><div class="avatar">MM</div><div><h3>Prof. Dr. Mohammad Masykuri, M.Si.</h3><p>Seni/Kriya · Desain dan budaya</p></div></div><span class="expert-chip">Desain</span><span class="expert-chip">Pendidikan Seni</span></article>
+          <article class="person"><div class="person-head"><div class="avatar">SY</div><div><h3>Dr. Sri Yamtinah, M.Pd.</h3><p>Penelitian dan Evaluasi Pendidikan</p></div></div><span class="expert-chip">Evaluasi Pendidikan</span></article>
+          <article class="person"><div class="person-head"><div class="avatar">LM</div><div><h3>Lina Mahardiani, S.T., M.M., M.Sc., Ph.D.</h3><p>Seni/Kriya · Desain dan budaya</p></div></div><span class="expert-chip">Desain</span></article>
+          <article class="person"><div class="person-head"><div class="avatar">MR</div><div><h3>Murni Ramli, S.P., M.Si., Ed.D.</h3><p>Education and Human Development</p></div></div><span class="expert-chip">Pendidikan</span></article>
         </div>
         <div class="faculty-cta"><a class="btn btn-blue" href="https://expert.uns.ac.id/researchers?fakultas%5B%5D=0106" target="_blank" rel="noopener">TELUSURI PROFIL DI EXPERT UNS ↗</a></div>
       </div>
     </section>
 
     <section class="advantages" id="keunggulan">
-      <div class="container"><div class="section-title"><h2>Keunggulan Prodi</h2><div class="title-line"></div><p>Ringkasan keunggulan yang ditonjolkan pada profil S2 Pendidikan Seni.</p></div><div class="adv-grid"><div class="adv-card"><strong>M.Pd.</strong><span>Gelar yang didapatkan setelah menyelesaikan program.</span></div><div class="adv-card"><strong>3 Bulan</strong><span>Rata-rata masa tunggu kerja alumni sebagaimana tercantum pada materi profil.</span></div></div></div>
+      <div class="container"><div class="section-title"><h2>Keunggulan Prodi</h2><div class="title-line"></div><p>Ringkasan keunggulan yang ditonjolkan pada profil S2 Pendidikan Seni.</p></div><div class="adv-grid"><div class="adv-card"><strong>M.Pd.</strong><span>Gelar yang didapatkan setelah menyelesaikan program.</span></div><div class="adv-card"><strong>1 Bulan</strong><span>Rata-rata masa tunggu kerja alumni sebagaimana tercantum pada materi profil.</span></div></div></div>
     </section>
 
     <section class="graduate" id="alumni">
       <div class="container"><div class="section-title"><h2>Alumni & Testimoni</h2><div class="title-line"></div><p>Potret lulusan dan pengalaman civitas akademika S2 Pendidikan Seni.</p></div>
         <div class="graduate-grid">
-          <article class="graduate-profile"><div class="portrait">VG</div><h3>Vinsensia Gunita Putri</h3><p><strong>Potret Lulusan Terbaik</strong></p><p style="margin-top:10px">Alumni 2023 · Pendidik dan praktisi seni.</p></article>
+          <article class="graduate-profile"><div class="portrait">P</div><h3>Prihantomo</h3><p><strong>Potret Lulusan Terbaik</strong></p><p style="margin-top:10px">Alumni 2012 · Kepala Dinas Pendidikan.</p></article>
           <div class="testimonials">
-            <article class="testimonial"><div class="quote-mark">“</div><h3>Testimoni Alumni</h3><p>Magister Pendidikan Seni FKIP UNS memberikan bekal keilmuan dan pengalaman yang mendukung perjalanan saya sebagai pendidik dan praktisi seni.</p><p class="quote-meta">Vinsensia Gunita Putri · 2023 (Alumni)</p></article>
-            <article class="testimonial"><div class="quote-mark">“</div><h3>Testimoni Mahasiswa</h3><p>Kuliah di Magister Pendidikan Seni FKIP UNS memberikan pengalaman belajar, pengembangan kreativitas, penelitian, dan kontribusi pada pendidikan seni.</p><p class="quote-meta">Firdha Anggraini · 2023 (Mahasiswa)</p></article>
+            <article class="testimonial"><div class="quote-mark">“</div><h3>Testimoni Alumni</h3><p>Lulus dengan masa studi yang sedikit terlewat, berkarir sebagai guru IPA di SMP 2 Sragen dan akhirnya menjadi Kepala Dinas Pendidikan Kabupaten Sragen hingga sekarang.</p><p class="quote-meta">Prihantomo · 2012 (Alumni)</p></article>
+            <article class="testimonial"><div class="quote-mark">“</div><h3>Testimoni Mahasiswa</h3><p>Kesan pada proses pelayanan pendidikan yang baik alhamdulillah, maturwun Bapak Ibu Dosen pembimbing, penguji, admin, teman-teman mahasiswa, berhasil pada tahap ini.</p><p class="quote-meta">Nurhamudin · 2022 (Mahasiswa)</p></article>
           </div>
         </div>
-        <div class="social-panel"><h3>Media Sosial</h3><div class="social-list"><a href="https://akademik.fkip.uns.ac.id/s2-pendidikan-seni/" target="_blank" rel="noopener">Website Prodi</a><span>WhatsApp: -</span><span>Instagram: @s2pendidikanseniuns</span><span>TikTok</span><span>Facebook</span></div></div>
       </div>
     </section>
 
@@ -672,18 +677,22 @@
         <a class="portal" href="https://uns.ac.id/" target="_blank" rel="noopener">UNS<small>UNIVERSITAS SEBELAS MARET</small></a>
         <a class="portal" href="https://fkip.uns.ac.id/" target="_blank" rel="noopener">FKIP<small>FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN</small></a>
         <a class="portal" href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">SPMB<small>PENERIMAAN MAHASISWA BARU</small></a>
-        <a class="portal" href="https://expert.uns.ac.id/researchers?fakultas%5B%5D=0106" target="_blank" rel="noopener">EXPERT<small>PORTAL KEPAKARAN UNS</small></a>
-        <a class="portal" href="https://akademik.fkip.uns.ac.id/s2-pendidikan-seni/" target="_blank" rel="noopener">PRODI<small>PENDIDIKAN SENI</small></a>
+        <a class="portal" href="https://expert.uns.ac.id/" target="_blank" rel="noopener">EXPERT<small>PORTAL KEPAKARAN UNS</small></a>
+        <a class="portal" href="https://s2pseni.fkip.uns.ac.id/" target="_blank" rel="noopener">PRODI<small>PENDIDIKAN SENI</small></a>
       </div>
       <div class="foot-grid">
         <div>
-          <div class="foot-brand"><img class="foot-mark" src="assets/logo-uns.png" alt="Logo Universitas Sebelas Maret" /><strong>UNIVERSITAS<br>SEBELAS MARET</strong></div>
+          <div class="foot-brand">
+            <div class="foot-logos">
+              <img class="foot-logo" src="assets/logo-uns.png" alt="Logo Universitas Sebelas Maret" />
+            </div>
+          </div>
           <div class="foot-text">S2 Pendidikan Seni · Pascasarjana FKIP Universitas Sebelas Maret. Jl. Ir. Sutami 36A Kentingan, Jebres, Surakarta, Jawa Tengah.</div>
         </div>
-        <div><div class="foot-title">Layanan Sistem</div><div class="foot-links"><a href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">SPMB UNS</a><a href="https://expert.uns.ac.id/researchers?fakultas%5B%5D=0106" target="_blank" rel="noopener">Expert UNS</a><a href="https://akademik.fkip.uns.ac.id/s2-pendidikan-seni/" target="_blank" rel="noopener">Website Prodi</a></div></div>
+        <div><div class="foot-title">Layanan Sistem</div><div class="foot-links"><a href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">SPMB UNS</a><a href="https://expert.uns.ac.id/" target="_blank" rel="noopener">Expert UNS</a><a href="https://s2pseni.fkip.uns.ac.id/" target="_blank" rel="noopener">Website Prodi</a></div></div>
         <div><div class="foot-title">Informasi</div><div class="foot-links"><a href="#jalur">Jalur Masuk</a><a href="#akreditasi">Akreditasi</a><a href="#spmb">Info SPMB</a><a href="#kurikulum">Kurikulum</a><a href="#dosen">Dosen & Kepakaran</a><a href="https://spmb.uns.ac.id/pendaftar/dashboard/index" target="_blank" rel="noopener">Pendaftaran</a></div></div>
       </div>
-      <div class="copyright">Copyright © 2026 Pascasarjana FKIP Universitas Sebelas Maret · Mockup landing page statis</div>
+      <div class="copyright">Copyright © 2026 Pascasarjana FKIP Universitas Sebelas Maret</div>
     </div>
   </footer>
 
